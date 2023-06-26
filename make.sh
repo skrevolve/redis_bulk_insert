@@ -34,14 +34,14 @@ type="$3"
 i=0
 
 if [ $type = "cli" ]; then
-    while [ $i -lt $range ]
+    while [ $i -le $range ]
     do
         echo $command $key $score${i} $member${i} >> ./cli-pipe.txt
         i=`expr $i + 1`
     done
 else
     printf '%s ' $command $key >> ./command.txt
-    while [ $i -lt $range ]
+    while [ $i -le $range ]
     do
         printf '%s ' "$score${i} '$member${i}'" >> ./command.txt
         i=`expr $i + 1`
